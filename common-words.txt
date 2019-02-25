@@ -1,0 +1,8 @@
+admin
+login
+reset
+search
+help
+index
+secure
+security
