@@ -5,11 +5,11 @@ from urllib.parse import urlparse
 #Crawls the given link to find more webpages
 def link_discovery(browser, url_scheme, root_url):
     all_links = browser.get_current_page().find_all("a", href=True)
+    #print(all_links)
     good_links = []
     for link in all_links:
-        if "http" not in link["href"] and len(link["href"]) > 1:
-            good_links.append(url_scheme + "://" + root_url + \
-            link["href"])
+        if "http" not in link["href"]:
+            good_links.append(url_scheme + "://" + root_url + link["href"])
             
     return good_links
 
